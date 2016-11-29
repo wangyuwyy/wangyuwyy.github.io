@@ -167,8 +167,7 @@
 <script>
     game.start();
     document.onkeydown=function(){
-        var evt=
-                window.event||arguments[0];
+        var evt= window.event||arguments[0];
         if(game.state==game.PLAYING){
             if(evt.keyCode==37){
                 game.moveLeft();
