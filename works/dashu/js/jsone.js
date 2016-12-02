@@ -1,39 +1,21 @@
 ;(function () {
     document.addEventListener('DOMContentLoaded',function(){
-        var oBanner = document.querySelector('.banner');
+        var oBanner = document.getElementById('banner');
         var oUl = oBanner.children[0];
         var aLi = oUl.children;
+        var oOl = oBanner.children[1];
+        var aBtn = oOl.children;
         var oNav = document.querySelector('.oNav');
         var oA = document.getElementById('oAc');
         var oT = document.getElementById('oTc');
         var oClose = document.getElementById('close');
         var oB = document.getElementById('oBox');
         var ob = document.getElementById('box1');
+
         oUl.style.width = aLi[0].offsetWidth*aLi.length/rem+'rem';
         var bOk = false;
-        var iNow = 1;
-        var x = -iNow*aLi[0].offsetWidth/rem;
-        oNav.addEventListener('touchstart', function (ev) {
-            oClose.style.display = 'block';
-            oB.style.display = 'block';
-            ob.style.display = 'block';
-			oB.style.opacity = '1';
-        });
-        oA.addEventListener('touchstart', function (ev) {
-            oClose.style.display = 'none';
-            ob.style.display = 'none';
-			oB.style.opacity = '0';
-        });
-        oT.addEventListener('touchstart', function (ev) {
-            oClose.style.display = 'none';
-            ob.style.display = 'none';
-			oB.style.opacity = '0';
-        });
-        oClose.addEventListener('touchstart', function (ev) {
-            oClose.style.display = 'none';
-            oB.style.display = 'none';
-            ob.style.display = 'none';
-        });
+        var n = 1;
+        var x = -n*aLi[0].offsetWidth/rem;
         oUl.addEventListener('touchstart',function(ev){
             if(bOk)return;
             bOk = true;
@@ -54,29 +36,36 @@
 
                 if(Math.abs(upX-downX)>100/rem){
                     if(downX>upX){
-                        iNow++;
+                        n++;
                     }else if(downX<upX){
-                        iNow--;
+                        n--;
                     }
                 }
-                x = -iNow*aLi[0].offsetWidth/rem;
+                x = -n*aLi[0].offsetWidth/rem;
 
                 oUl.style.WebkitTransition = '.5s all ease';
 
                 oUl.style.WebkitTransform = 'translate3d('+x+'rem,0,0)';
                 function tranEnd(){
                     oUl.removeEventListener('transitionend',tranEnd,false);
-                    if(iNow==0){
-                        iNow = aLi.length-2;
+                    if(n==0){
+                        n = aLi.length-2;
                         oUl.style.WebkitTransition = 'none';
-                        x = -iNow*aLi[0].offsetWidth/rem;
+                        x = -n*aLi[0].offsetWidth/rem;
                         oUl.style.WebkitTransform = 'translate3d('+x+'rem,0,0)';
-                    }else if(iNow==aLi.length-1){
-                        iNow = 1;
+                    }else if(n==aLi.length-1){
+                        n = 1;
                         oUl.style.WebkitTransition = 'none';
-                        x = -iNow*aLi[0].offsetWidth/rem;
+                        x = -n*aLi[0].offsetWidth/rem;
                         oUl.style.WebkitTransform = 'translate3d('+x+'rem,0,0)';
                     }
+
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].classList.remove('active');
+                    }
+                    aBtn[n-1].classList.add('active');
+
+
                     bOk = false;
                 }
                 oUl.addEventListener('transitionend',tranEnd,false);
@@ -85,5 +74,26 @@
             document.addEventListener('touchend',fnEnd,false);
             ev.preventDefault();
         },false);
+        oNav.addEventListener('touchstart', function (ev) {
+            oClose.style.display = 'block';
+            oB.style.display = 'block';
+            ob.style.display = 'block';
+            oB.style.opacity = '1';
+        });
+        oA.addEventListener('touchstart', function (ev) {
+            oClose.style.display = 'none';
+            ob.style.display = 'none';
+            oB.style.opacity = '0';
+        });
+        oT.addEventListener('touchstart', function (ev) {
+            oClose.style.display = 'none';
+            ob.style.display = 'none';
+            oB.style.opacity = '0';
+        });
+        oClose.addEventListener('touchstart', function (ev) {
+            oClose.style.display = 'none';
+            oB.style.display = 'none';
+            ob.style.display = 'none';
+        });
     },false);
 })();

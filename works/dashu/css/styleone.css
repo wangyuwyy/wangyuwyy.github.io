@@ -122,6 +122,24 @@ html,body{
 .ooSec div ul{
     float: left;
     width:16rem;
+    height:100%;
+}
+.ooSec ol{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    z-index:9999;
+
+}
+.ooSec ol li{
+    float:left;
+    width:33%;
+    height:0.1rem;
+    background:#ccc;
+}
+.ooSec ol li.active{
+    background:#f90;
 }
 .ooSec svg{
     width:100%;
@@ -130,16 +148,16 @@ html,body{
     margin-bottom:1.2rem;
     text-align: center;
 }
-.ooSec li{
+.ooSec ul li{
     float: left;
     margin-top:2.15rem;
 }
-.ooSec li:nth-child(1){
+.ooSec ul li:nth-child(1){
     width:2.925rem;
     height:5.75rem;
     margin-left:2rem;
 }
-.ooSec li:nth-child(1) p{
+.ooSec ul li:nth-child(1) p{
     float: left;
     font-size:0.7rem;
     color: #474747;
@@ -147,26 +165,26 @@ html,body{
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(1) i{
+.ooSec ul li:nth-child(1) i{
     float: left;
     font-size:0.5rem;
     color: #999999;
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(1) b{
+.ooSec ul li:nth-child(1) b{
     float: left;
     font-size:0.5rem;
     color: #999999;
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(2){
+.ooSec ul li:nth-child(2){
     width:2.925rem;
     height:5.75rem;
     margin-left:2rem;
 }
-.ooSec li:nth-child(2) p{
+.ooSec ul li:nth-child(2) p{
     float: left;
     font-size:0.7rem;
     color: #474747;
@@ -174,26 +192,26 @@ html,body{
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(2) i{
+.ooSec ul li:nth-child(2) i{
     float: left;
     font-size:0.5rem;
     color: #999999;
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(2) b{
+.ooSec ul li:nth-child(2) b{
     float: left;
     font-size:0.5rem;
     color: #999999;
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(3){
+.ooSec ul li:nth-child(3){
     width:3.45rem;
     height:5.75rem;
     margin-left:1.8rem;
 }
-.ooSec li:nth-child(3) p{
+.ooSec ul li:nth-child(3) p{
     float: left;
     font-size:0.7rem;
     color: #474747;
@@ -201,14 +219,14 @@ html,body{
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(3) i{
+.ooSec ul li:nth-child(3) i{
     float: left;
     font-size:0.5rem;
     color: #999999;
     width: 100%;
     text-align: center;
 }
-.ooSec li:nth-child(3) b{
+.ooSec ul li:nth-child(3) b{
     float: left;
     font-size:0.5rem;
     color: #999999;
