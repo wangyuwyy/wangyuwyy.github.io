@@ -16,7 +16,7 @@
         var oT = document.getElementById('oTc');
         var oClose = document.getElementById('close');
         var oB = document.getElementById('oBox');
-        var ob = document.getElementById('box1');
+        var ob = document.getElementById('opbox');
         oNav.addEventListener('touchstart', function (ev) {
             oClose.style.display = 'block';
             oB.style.display = 'block';
