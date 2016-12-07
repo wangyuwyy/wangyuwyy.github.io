@@ -10,7 +10,7 @@
 })(window,document);
 
 ;(function () {
-    document.addEventListener('DOMContentLoaded',function(){
+    document.addEventListener('DOMContentLoaded',function(ev){
         var oNav = document.querySelector('.oNav');
         var oA = document.getElementById('oAc');
         var oT = document.getElementById('oTc');
