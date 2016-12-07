@@ -38,5 +38,6 @@
             oB.style.display = 'none';
             ob.style.display = 'none';
         });
+        return false;
     },false);
 })();
