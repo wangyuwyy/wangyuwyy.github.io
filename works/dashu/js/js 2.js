@@ -39,5 +39,6 @@
             ob.style.display = 'none';
         });
         ev.preventDefault();
+        return false;
     },false);
 })();
